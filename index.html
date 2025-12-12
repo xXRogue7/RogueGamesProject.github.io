@@ -6,16 +6,27 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: turquoise;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .banner {
-      margin: 0;
       background-color: #0a0b10;
       display: flex;
       justify-content: center;
       align-items: center;
-      max-width: 100%;
-      height: 250px;
+      width: 80%;          /* ancho centrado con margen a los lados */
+      height: 500px;       /* doble de grande */
+      margin: 20px auto;   /* centrado horizontal */
+      border-radius: 8px;
     }
 
     h1 {
@@ -30,6 +41,7 @@
       margin: 0;
       background: #ddd;
       border-bottom: 1px solid #ccc;
+      width: 100%;
     }
 
     .menu ul {
@@ -106,6 +118,7 @@
       justify-content: center;
       gap: 20px;
       padding: 20px;
+      width: 100%;
     }
 
     .game-card {
