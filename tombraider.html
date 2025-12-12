@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tomb Raider</title>
+  <style>
+    :root {
+      --col-left-width: 28%;
+      --col-right-width: 72%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    /* Contenedor central */
+    .header {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Banner superior */
+    .banner {
+      background-image: url('banner-tombraider.jpg'); /* Reemplaza con tu imagen */
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      margin-bottom: 32px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Menú principal */
+    .menu {
+      display: flex;
+      justify-content: center;
+      background: #ddd;
+      border-bottom: 1px solid #ccc;
+      width: 100%;
+      margin-bottom: 32px;
+    }
+
+    .menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .menu ul li {
+      position: relative;
+    }
+
+    .menu > ul > li > a,
+    .menu > ul > li {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #000;
+      background: #eee;
+      border-right: 1px solid #ccc;
+      font-weight: bold;
+    }
+
+    .menu > ul > li:last-child {
+      border-right: none;
+    }
+
+    .menu > ul > li:hover {
+      background: #fff;
+      cursor: pointer;
+    }
+
+    /* Submenú SAGAS */
+    .menu ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background: #f6f6f6;
+      border: 1px solid #ccc;
+      width: 200px;
+      z-index: 10;
+    }
+
+    .menu ul li:hover ul {
+      display: block;
+    }
+
+    .menu ul li ul li {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .menu ul li ul li a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #000;
+      background: #fff;
+    }
+
+    .menu ul li ul li a:hover {
+      background: #888;
+      color: #fff;
+    }
+
+    /* Tabla con bordes ocultos */
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 0;
+    }
+
+    td {
+      border: none;
+      vertical-align: top;
+      padding: 0;
+    }
+
+    /* Columnas */
+    .col-left {
+      width: var(--col-left-width);
+    }
+    .col-right {
+      width: var(--col-right-width);
+      padding-left: 24px;
+    }
+
+    /* Imagen de portada */
+    .cover {
+      display: block;
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      background: #f5f5f5;
+    }
+
+    /* Descripción */
+    .desc {
+      display: grid;
+      gap: 6px;
+      line-height: 1.45;
+    }
+    .title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .meta {
+      color: #444;
+    }
+    .price {
+      font-weight: 700;
+    }
+
+    /* Línea divisoria entre juegos */
+    .divider td {
+      padding: 16px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      table, tbody, tr, td {
+        display: block;
+        width: 100%;
+      }
+      .col-right {
+        padding-left: 0;
+        margin-top: 12px;
+      }
+      .cover {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="banner">
+      <img src="tombraiderbanner.png">
+    </div>
+
+    <!-- Menú desplegable -->
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="registro.html">REGISTRO</a></li>
+        <li>SAGAS
+          <ul>
+            <li><a href="assassinscreed.html">ASSASSIN'S CREED</a></li>
+            <li><a href="#">TOMB RAIDER</a></li>
+            <li><a href="tlou.html">TOMB RAIDER (2013)</a></li>
+            <li><a href="batman.html">RISE OF THE TOMB RAIDER</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Tabla de juegos -->
+    <table aria-label="Tabla de juegos Tomb Raider">
+      <tbody>
+        <!-- Juego 1 -->
+        <tr>
+          <td class="col-left">
+            <img class="cover" src="tombraider1996.png" alt="Portada Tomb Raider 1996" />
+          </td>
+          <td class="col-right">
+            <div class="desc">
+              <h3 class="title">TOMB RAIDER (1996)</h3>
+              <div><span class="price">Sinopsis:</span> Primer juego de la saga donde Lara Croft explora tumbas ancestrales en busca del Scion, enfrentándose a trampas y enemigos en escenarios tridimensionales pioneros.</div>
+              <div class="meta"><strong>Plataformas:</strong> PlayStation, Sega Saturn, PC</div>
+            </div>
+          </td>
+        </tr>
+        <tr class="divider"><td colspan="2"></td></tr>
+
+        <!-- Juego 2 -->
+        <tr>
+          <td class="col-left">
+            <img class="cover" src="tombraiderlegend.png" alt="Portada Tomb Raider Legend" />
+          </td>
+          <td class="col-right">
+            <div class="desc">
+              <h3 class="title">TOMB RAIDER LEGEND (2006)</h3>
+              <div><span class="price">Sinopsis:</span> Lara regresa con un reinicio moderno, viajando por todo el mundo en busca de la legendaria espada Excalibur mientras enfrenta conspiraciones y enemigos.</div>
+              <div class="meta"><strong>Plataformas:</strong> PlayStation 2, Xbox, PC</div>
+            </div>
+          </td>
+        </tr>
+        <tr class="divider"><td colspan="2"></td></tr>
+
+        <!-- Juego 3 -->
+        <tr>
+          <td class="col-left">
+            <img class="cover" src="tombraider2013.png" alt="Portada Tomb Raider 2013" />
+          </td>
+          <td class="col-right">
+            <div class="desc">
+              <h3 class="title">TOMB RAIDER (2013)</h3>
+              <div><span class="price">Sinopsis:</span> Reinicio de la saga que muestra los orígenes de Lara Croft, atrapada en una isla misteriosa donde debe sobrevivir y descubrir secretos ocultos.</div>
+              <div class="meta"><strong>Plataformas:</strong> PlayStation 3, Xbox 360, PC</div>
+            </div>
+          </td>
+        </tr>
+        <tr class="divider"><td colspan="2"></td></tr>
+
+        <!-- Juego 4 -->
+        <tr>
+          <td class="col-left">
+            <img class="cover" src="riseofthetombraider.png" alt="Portada Rise Of The Tomb Raider 2013" />
+          </td>
+          <td class="col-right">
+            <div class="desc">
+              <h3 class="title">RISE OF THE TOMB RAIDER (2015)</h3>
+              <div><span class="price">Sinopsis:</span> Rise of the Tomb Raider (2015) sigue a Lara Croft en su búsqueda para descubrir los secretos de la Inmortalidad. Después de los eventos de Tomb Raider (2013), Lara busca respuestas sobre la misteriosa Trinidad, una antigua organización que quiere obtener el poder de la inmortalidad, y sobre la mítica ciudad de Kitezh, que, según las leyendas, alberga el secreto para alcanzar la vida eterna.
+
+Lara viaja a Siberia, donde se enfrenta a un terreno hostil, grupos enemigos y entornos extremadamente peligrosos mientras explora tumbas ocultas y busca artefactos antiguos. A lo largo de su viaje, la joven arqueóloga se enfrenta a dilemas morales, desafíos personales y a la constante amenaza de Trinity, que la persigue para hacerse con el control de los mismos secretos que ella busca.</div>
+              <div class="meta"><strong>Plataformas:</strong> PlayStation 3, PlayStation 4, Xbox 360, Xbox One, PC</div>
+            </div>
+          </td>
+        </tr>
+        <tr class="divider"><td colspan="2"></td></tr>
+
+                <!-- Juego 5 -->
+        <tr>
+          <td class="col-left">
+            <img class="cover" src="shadowofthetombraider.png" alt="Portada Shadow Of TheTomb Raider" />
+          </td>
+          <td class="col-right">
+            <div class="desc">
+              <h3 class="title">SHADOW OF THE TOMB RAIDER (2018)</h3>
+              <div><span class="price">Sinopsis:</span> Shadow of the Tomb Raider (2018) sigue las aventuras de Lara Croft mientras se enfrenta a nuevos desafíos en su viaje hacia convertirse en la icónica tumba raider que todos conocemos. La historia se centra en la búsqueda de Lara para detener el apocalipsis maya, desatado accidentalmente tras robar un artefacto en una misión. El robo activa una antigua profecía y desata la furia de los dioses mayas, lo que pone en peligro al mundo.
+
+Lara viaja a las junglas de América Central, explorando ruinas mayas y enfrentándose a la organización paramilitar Trinity, que busca usar el artefacto para sus propios fines. A medida que avanza la historia, Lara se enfrenta a sus propios miedos y dudas sobre sus decisiones, mientras intenta evitar el fin del mundo y salvar a sus seres queridos.</div>
+              <div class="meta"><strong>Plataformas:</strong> PlayStation 4, Xbox One, PC, Nintendo Switch</div>
+            </div>
+          </td>
+        </tr>
+        <tr class="divider"><td colspan="2"></td></tr>
